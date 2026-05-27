@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mindful Mini Dashboard | Interactive Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dashboard">
+  <div class="header">
+    <h1>✨ Mindful Mini Dashboard</h1>
+    <div class="date-badge" id="liveDate"></div>
+  </div>
+
+  <div class="features-grid">
+    <!-- INTERACTIVE FEATURE 1: TASK MANAGER (DOM manipulation + events) -->
+    <div class="card">
+      <h2>📋 Task Manager</h2>
+      <div class="card-content">
+        <input type="text" id="taskInput" placeholder="Write a new task..." autocomplete="off">
+        <button id="addTaskBtn" class="primary">➕ Add Task</button>
+        <div class="task-list" id="taskListContainer">
+          <div style="text-align:center; color:#64748b; padding:10px;">✨ Your tasks will show up</div>
+        </div>
+        <button id="clearAllTasksBtn" class="warning" style="background:#e11d48; margin-top:12px;">🗑️ Clear All Tasks</button>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE FEATURE 2: MOOD TRACKER + QUOTE (DOM update + localStorage) -->
+    <div class="card">
+      <h2>😊 Mood Tracker</h2>
+      <div class="card-content">
+        <select id="moodSelect">
+          <option value="😊 Happy">😊 Happy</option>
+          <option value="😐 Neutral">😐 Neutral</option>
+          <option value="😌 Calm">😌 Calm</option>
+          <option value="⚡ Energetic">⚡ Energetic</option>
+          <option value="😴 Tired">😴 Tired</option>
+        </select>
+        <button id="logMoodBtn" class="success">✨ Log My Mood</button>
+        <div id="moodFeedback" style="font-size:0.85rem; margin-top: 8px; color:#2c3e50;"></div>
+        <div class="quote-box" id="inspireQuote">
+          "Stay mindful, stay grounded."
+        </div>
+        <button id="refreshQuoteBtn" class="secondary">🔄 New Insight</button>
+        <hr>
+        <div><strong>📜 Recent moods:</strong></div>
+        <div id="moodHistoryList" class="mood-history" style="max-height: 100px; font-size:0.85rem;">
+          <i>No entries yet. Log your mood!</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE FEATURE 3: GRATITUDE / AFFIRMATION + COUNTER -->
+    <div class="card">
+      <h2>🌟 Gratitude Score</h2>
+      <div class="card-content">
+        <p style="margin-bottom: 0.5rem;">How grateful do you feel today?</p>
+        <div class="flex-buttons">
+          <button id="gratefulUp" class="primary">👍 +1 Gratitude</button>
+          <button id="gratefulReset" class="secondary">🔄 Reset</button>
+        </div>
+        <div class="score-value" id="gratitudeScore">0</div>
+        <div id="affirmationMsg" style="background:#eef2ff; border-radius: 1.2rem; padding: 0.7rem; text-align:center; margin-top:1rem; font-size:0.9rem;">
+          💖 Click +1 to boost your vibe
+        </div>
+        <button id="randomAffirmationBtn" style="margin-top: 12px; width:100%; background:#4f46e5;">✨ Random Affirmation</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-note">
+    🌱 Interactive dashboard — track tasks, log moods & collect gratitude moments.
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
